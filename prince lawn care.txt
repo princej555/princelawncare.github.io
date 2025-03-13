@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawn Mowing Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Lawn Mowing Services</h1>
+    <p>Affordable and professional lawn care at your service.</p>
+  </header>
+
+  <section class="pricing">
+    <h2>Our Pricing</h2>
+    <p>We offer lawn mowing services for $20 to $40 per hour, depending on the size and complexity of your lawn.</p>
+    <ul>
+      <li>Small Lawn: $20/hour</li>
+      <li>Medium Lawn: $30/hour</li>
+      <li>Large Lawn: $40/hour</li>
+    </ul>
+  </section>
+
+  <section class="schedule">
+    <h2>Schedule Your Mowing</h2>
+    <form id="booking-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required placeholder="Full Name">
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" required placeholder="Email Address">
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required placeholder="Phone Number">
+
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="time">Preferred Time:</label>
+      <input type="time" id="time" required>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, feel free to reach out!</p>
+    <p>Email: your@email.com | Phone: (123) 456-7890</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Lawn Mowing Services</p>
+  </footer>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  color: #4CAF50;
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+}
+
+.pricing ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pricing li {
+  background-color: #e2e2e2;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+document.getElementById("booking-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+
+  if (name && email && phone && date && time) {
+    alert(`Booking confirmed for ${name} on ${date} at ${time}. You will receive an email confirmation.`);
+    // Here, you can integrate with an email service or a backend to store bookings.
+  } else {
+    alert("Please fill out all the fields.");
+  }
+});
